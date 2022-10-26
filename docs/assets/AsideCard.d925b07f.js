@@ -1,0 +1,1 @@
+import{j as e,b as a}from"./bootstrap.0afc7782.js";const c=d=>e("div",{className:"card mx-5 mb-4",id:d.id,children:a("div",{className:"card-body",children:[e("h6",{className:"card-title text-decoration-underline",children:d.title}),e("div",{className:"card-text",children:d.children})]})});export{c as A};
