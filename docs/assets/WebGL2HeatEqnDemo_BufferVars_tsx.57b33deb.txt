@@ -1,0 +1,7 @@
+// a list of textures that we will cycle through
+private textures: WebGLTexture[] = [];
+// a list of framebuffers we will cycle through
+private framebuffers: WebGLFramebuffer[] = [];
+
+// the frame number we're on
+private frameCount = 0;

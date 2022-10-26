@@ -1,0 +1,2 @@
+      // create control texture
+      this.controlTexture = createR32UITexture(this.gl, this.props.size, this.props.size)!;

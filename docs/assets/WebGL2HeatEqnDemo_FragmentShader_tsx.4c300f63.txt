@@ -1,0 +1,55 @@
+// this fragment shader does the actual work of computation
+const diffuse_fs = `#version 300 es
+precision highp float;
+precision highp usampler2D;
+precision highp sampler2D;
+
+// the heat texture
+uniform sampler2D u_tex;
+
+// the control texture
+uniform usampler2D u_ctrl_tex;
+
+// the texCoords passed in from the vertex shader.
+in vec2 v_texCoord;
+
+// the output
+out vec4 value;
+ 
+void main() {
+  vec2 res = vec2(textureSize(u_tex, 0));
+  float x_off = 1.0/res.x;
+  float y_off = 1.0/res.y;
+
+  // 0 1 2
+  // 1
+  // 2
+
+  float v01 = texture(u_tex, v_texCoord + vec2(-x_off,+0.000)).r;
+  float v10 = texture(u_tex, v_texCoord + vec2(+0.000,-y_off)).r;
+  float v12 = texture(u_tex, v_texCoord + vec2(+0.000,+y_off)).r;
+  float v21 = texture(u_tex, v_texCoord + vec2(+x_off,+0.000)).r;
+
+  float sum =
+          v01 +
+    v10 +       v12 +
+          v21;
+
+  uint ctrl = texture(u_ctrl_tex, v_texCoord).r;
+
+  switch(ctrl) {
+    case 0u: {
+      value = vec4(sum/4.0, 0.0, 0.0, 0.0);
+      break;
+    }
+    case 1u: {
+      value = vec4(0.0, 0.0, 0.0, 0.0);
+      break;
+    }
+    default: {
+      value = vec4(1.0, 0.0, 0.0, 0.0);
+      break;
+    }
+  }
+}
+`;
