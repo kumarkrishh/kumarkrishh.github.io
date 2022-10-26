@@ -1,0 +1,25 @@
+// handle drawing on the canvas
+const mousePos = this.cmt.mousePos;
+if (mousePos) {
+  // set texture unit 1 to active so we can work on it
+  this.gl.activeTexture(this.gl.TEXTURE1);
+  // bind control texture
+  this.gl.bindTexture(this.gl.TEXTURE_2D, this.controlTexture);
+
+  const brushRadius = this.drawSelect.current!.selectedIndex === 0 ? 10 : 2
+  const brushSize = brushRadius * 2;
+
+  // fill with control to get high number
+  const data = new Uint32Array(brushSize * brushSize);
+  for (let i = 0; i < data.length; i++) {
+    data[i] = this.drawSelect.current!.selectedIndex;
+  }
+
+  // x and y vars store top left location of draw site
+
+  const x = clamp(mousePos.current.x - brushRadius, 0, this.props.size - brushSize);
+  // note that y axis is inverted on the texture!
+  const y = clamp(this.props.size - mousePos.current.y - brushRadius, 0, this.props.size - brushSize);
+
+  overwriteR32UITexture(this.gl, Math.floor(x), Math.floor(y), brushSize, brushSize, data);
+}

@@ -1,0 +1,14 @@
+for (let i = 0; i < this.simSpeedRange.current!.valueAsNumber; i++) {
+  const fbo = this.framebuffers[this.frameCount % 2];
+  const tex = this.textures[(this.frameCount + 1) % 2];
+
+  // make tex the teture to render to
+  this.gl.bindTexture(this.gl.TEXTURE_2D, tex);
+  // make fbo the current framebuffer
+  this.gl.bindFramebuffer(this.gl.FRAMEBUFFER, fbo);
+
+  // execute draw to texture
+  this.gl.drawArrays(this.gl.TRIANGLES, 0, 6);
+
+  this.frameCount++;
+}

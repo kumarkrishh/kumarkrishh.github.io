@@ -1,0 +1,22 @@
+// create pingpongable textures and frambuffers
+for (let i = 0; i < 2; i++) {
+  const tex = createR32FTexture(this.gl, this.props.size, this.props.size, new Float32Array(this.props.size * this.props.size))!;
+  this.gl.bindTexture(this.gl.TEXTURE_2D, tex);
+  this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_WRAP_S, this.gl.CLAMP_TO_EDGE);
+  this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_WRAP_T, this.gl.CLAMP_TO_EDGE);
+  this.textures.push(tex);
+
+  const fbo = this.gl.createFramebuffer()!;
+  // this makes fbo the current active framebuffer
+  this.gl.bindFramebuffer(this.gl.FRAMEBUFFER, fbo);
+  // configure the currently active framebuffer to use te
+  this.gl.framebufferTexture2D(
+    this.gl.FRAMEBUFFER, // will bind as a framebuffer
+    this.gl.COLOR_ATTACHMENT0, // Attaches the texture to the framebuffer's color buffer. 
+    this.gl.TEXTURE_2D, // we have a 2d texture
+    tex, // the texture to attach
+    0 // the mipmap level (we don't want mipmapping, so we set to 0)
+  );
+  // push framebuffer
+  this.framebuffers.push(fbo);
+}
