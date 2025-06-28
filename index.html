@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krish Kumar | SWE Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- HERO -->
+      <section class="hero">
+        <img src="pfp.jpeg" alt="Krish Kumar" class="profile-img" />
+        <h1>Krish Kumar</h1>
+        <h2>Software Engineer</h2>
+        <p>
+          SWE intern at Apple & CS student at UCLA, passionate about performant
+          infrastructure and applied AI. I build clean, scalable, and impactful
+          systems.
+        </p>
+        <div class="hero-buttons">
+          <a href="#experience" class="btn">Explore My Work ↓</a>
+          <a
+            href="KrishKumar_Resume_Apple.pdf"
+            target="_blank"
+            class="btn secondary"
+            >View Résumé ↗</a
+          >
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/kumarkrishh" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://linkedin.com/in/krishkum" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience">
+        <h3>Experience</h3>
+
+        <div class="job-card">
+          <h4>Software Engineer Intern</h4>
+          <a href="https://www.apple.com/" class="company-name">@ Apple</a>
+          <p class="duration">Mar 2025 — Sep 2025</p>
+          <ul>
+            <li>
+              Resolved critical issues in system daemons and drivers across
+              iOS/macOS/tvOS.
+            </li>
+            <li>Expanded unit test coverage to detect malformed inputs early.</li>
+            <li>
+              Improved security and reliability of core networking infrastructure.
+            </li>
+          </ul>
+          <div class="tags">
+            <span>C++</span><span>Swift</span><span>Networking</span
+            ><span>System Daemons</span>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <h4>Cybersecurity Intern</h4>
+          <a href="https://www.llnl.gov/" class="company-name"
+            >@ Lawrence Livermore National Lab</a
+          >
+          <p class="duration">Jun 2024 — Sep 2024</p>
+          <ul>
+            <li>
+              Built a neural network (93% accuracy) to predict cyberattack impact
+              on Texas’s power grid.
+            </li>
+            <li>
+              Improved grid resilience by 20%, protecting 30M+ residents.
+            </li>
+          </ul>
+          <div class="tags">
+            <span>Python</span><span>PyTorch</span><span>Cybersecurity</span
+            ><span>Grid Simulation</span>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <h4>ML Researcher</h4>
+          <a href="https://smartgrid.ucla.edu/" class="company-name"
+            >@ UCLA Smart Grid Energy Research Center</a
+          >
+          <p class="duration">Sep 2023 — Present</p>
+          <ul>
+            <li>
+              Designing an actor-critic RL model to optimize EV charging with
+              voltage regulation.
+            </li>
+            <li>
+              Incorporating dynamic pricing into real-time scheduling.
+            </li>
+          </ul>
+          <div class="tags">
+            <span>Python</span><span>RL</span><span>Energy Systems</span
+            ><span>Optimization</span>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <h4>Software Engineer Intern</h4>
+          <a href="https://www.roku.com/" class="company-name" target="_blank"
+            >@ Roku</a
+          >
+          <p class="duration">Jun 2023 — Jul 2023</p>
+          <ul>
+            <li>
+              Created a dynamic Roku TV app using BrightScript and SceneGraph for
+              interactive STEM learning.
+            </li>
+            <li>
+              Reached 150+ underrepresented students through an intuitive,
+              engaging UI experience.
+            </li>
+          </ul>
+          <div class="tags">
+            <span>BrightScript</span><span>SceneGraph</span><span>UI Design</span
+            ><span>TV App Dev</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h3>Featured Projects</h3>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img
+              src="pantrypal2.png"
+              alt="AI Recipe App"
+              class="project-img"
+            />
+            <div class="project-content">
+              <h4>PantryPal: AI Recipe Recommender</h4>
+              <p>
+                Suggests recipes based on ingredients using OpenAI. Includes
+                instructions + nutrition.
+              </p>
+              <div class="tags">
+                <span>React</span><span>Next.js</span><span>MongoDB</span
+                ><span>OpenAI API</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://pantrypal-ai-git-main-krishkumars-projects.vercel.app/"
+                  class="btn"
+                  target="_blank"
+                  >Visit Site ↗</a
+                >
+                <a
+                  href="https://github.com/kumarkrishh/pantrypal.ai"
+                  class="btn secondary"
+                  target="_blank"
+                  >View Code ↗</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img src="uniride.png" alt="UniRide" class="project-img" />
+            <div class="project-content">
+              <h4>UniRide: University Carpool Platform</h4>
+              <p>
+                Built full-stack carpooling platform for students with REST APIs
+                and real-time chat.
+              </p>
+              <div class="tags">
+                <span>React</span><span>Node.js</span><span>MongoDB</span
+                ><span>REST API</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://bruin-ride-wl7n.vercel.app/"
+                  class="btn"
+                  target="_blank"
+                  >Visit Site ↗</a
+                >
+                <a
+                  href="https://github.com/kumarkrishh/uniride"
+                  class="btn secondary"
+                  target="_blank"
+                  >View Code ↗</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
