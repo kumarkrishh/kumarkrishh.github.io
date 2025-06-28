@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Krish Kumar | SWE Portfolio</title>
+    <title>Krish Kumar</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
@@ -21,11 +21,10 @@
         <img src="pfp.jpeg" alt="Krish Kumar" class="profile-img" />
         <h1>Krish Kumar</h1>
         <h2>Software Engineer</h2>
-        <p>
-          SWE intern at Apple & CS student at UCLA, passionate about performant
-          infrastructure and applied AI. I build clean, scalable, and impactful
-          systems.
-        </p>
+        <p class="intro">
+  <span class="typing-text"></span>
+</p>
+
         <div class="hero-buttons">
           <a href="#experience" class="btn">Explore My Work ↓</a>
           <a
@@ -198,5 +197,46 @@
         </div>
       </section>
     </div>
+    <script>
+const phrases = [
+  "Hey there, I'm Krish, a SWE intern at Apple",
+  "CS student at UCLA focused on systems and AI",
+  "Always learning, always shipping 🚀"
+];
+
+  const typingElement = document.querySelector(".typing-text");
+  let phraseIndex = 0;
+  let letterIndex = 0;
+  let typing = true;
+
+  function typeLoop() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (typing) {
+      if (letterIndex < currentPhrase.length) {
+        typingElement.textContent += currentPhrase.charAt(letterIndex);
+        letterIndex++;
+        setTimeout(typeLoop, 60);
+      } else {
+        typing = false;
+        setTimeout(typeLoop, 1200); // pause before deleting
+      }
+    } else {
+      if (letterIndex > 0) {
+        typingElement.textContent = currentPhrase.substring(0, letterIndex - 1);
+        letterIndex--;
+        setTimeout(typeLoop, 40);
+      } else {
+        typing = true;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        setTimeout(typeLoop, 200);
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", typeLoop);
+</script>
+
+
   </body>
 </html>

@@ -360,3 +360,26 @@ section h3 {
   margin-left: 0.3em;
   font-size: 0.85em;
 }
+
+
+/* Typing animation */
+.typing-text {
+  font-size: 1rem;
+  color: #ccc;
+  border-right: 2px solid #58a6ff;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
