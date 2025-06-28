@@ -355,3 +355,8 @@ section h3 {
   text-decoration: none;
   color: #8bb8ff;
 }
+
+.btn i {
+  margin-left: 0.3em;
+  font-size: 0.85em;
+}
