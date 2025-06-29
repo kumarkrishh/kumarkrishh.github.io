@@ -383,3 +383,7 @@ section h3 {
 @keyframes blink-caret {
   50% { border-color: transparent; }
 }
+
+html {
+  scroll-behavior: smooth;
+}
