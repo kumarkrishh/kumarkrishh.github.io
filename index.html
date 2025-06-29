@@ -214,6 +214,26 @@
       </section>
     </div>
     <script>
+  // Smooth scroll with custom speed and offset
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        const offset = -40; // scroll to 40px above the section
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY + offset;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+
+    <script>
 const phrases = [
   "Hey there, I'm Krish, a SWE intern at Apple",
   "CS student at UCLA focused on systems and AI",
