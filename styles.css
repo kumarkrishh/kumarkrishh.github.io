@@ -303,7 +303,8 @@ section h3 {
 
 .project-img {
   width: 100%;
-  height: 160px;
+  height: 250px;
+  max-height: none;  
   object-fit: cover;
   border-bottom: 1px solid #222;
 }
@@ -386,4 +387,47 @@ section h3 {
 
 html {
   scroll-behavior: smooth;
+}
+
+.project-image-wrapper {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #121b2e;   /* ← IMPORTANT */
+  padding-top: 14px;   
+  border-radius: 6px;   /* match project-card */
+  overflow: hidden;      /* clip the white background */
+}
+
+
+.project-img.portrait {
+  height: 100%;
+  max-height: 100%;
+  width: auto;
+  max-width: 90%;       /* ← KEY: allow it to grow wider */
+  object-fit: contain;
+  border: none;
+}
+
+
+.project-img.portrait {
+  border: none !important;
+}
+
+.project-image-wrapper.wide {
+  height: 260px;              /* MATCH the iPhone wrapper */
+  padding: 0;         /* optically center content */
+  background: transparent;
+}
+
+.project-img.wide {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.project-img.wide {
+  max-height: none;      /* ← THIS FIXES VERTICAL CLIPPING */
 }
